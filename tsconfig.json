@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "inlineSourceMap": true,
+    "lib": ["ESNext", "dom"],
+    "target": "es2018",
+    "moduleResolution": "node",
+    "module": "CommonJS",
+    "strict": true,
+    "esModuleInterop": true
+  },
+
+  "include": ["src/**/*"]
+}
