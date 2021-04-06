@@ -2,7 +2,7 @@ import { Page } from "puppeteer";
 
 export const generate = async (page: Page, url: string) => {
   await page.goto(url, {
-    waitUntil: "networkidle2",
+    waitUntil: "networkidle0",
   });
 
   await page.setViewport({
