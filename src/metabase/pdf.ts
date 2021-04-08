@@ -6,14 +6,17 @@ export const generate = async (page: Page, url: string) => {
   });
 
   await page.setViewport({
-    height: 1080,
-    width: 1920,
+    height: 1000,
+    width: 1500,
     deviceScaleFactor: 2,
   });
 
+  const dashboard = await page.$(".Dashboard");
+  const boundingBox = await dashboard?.boundingBox();
+
   return page.pdf({
-    scale: 0.75,
-    format: "a3",
+    height: boundingBox?.height,
+    width: boundingBox?.width,
     printBackground: true,
   });
 };
