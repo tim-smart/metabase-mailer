@@ -11,6 +11,9 @@ export const generate = async (page: Page, url: string) => {
     deviceScaleFactor: 2,
   });
 
+  // Allow time for page to redraw
+  await page.waitForTimeout(2000);
+
   const dashboard = await page.$(".Dashboard");
   const boundingBox = await dashboard?.boundingBox();
 
