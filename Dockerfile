@@ -8,7 +8,6 @@ COPY yarn.lock .
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-RUN apk add --no-cache --update make gcc g++ python git
 RUN yarn install --production=false
 
 COPY . ./
