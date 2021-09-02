@@ -11,6 +11,7 @@ export const generate = async (page: Page, url: string) => {
   return page.pdf({
     height: boundingBox?.height,
     width: boundingBox?.width,
+    pageRanges: "1",
     printBackground: true,
   });
 };
