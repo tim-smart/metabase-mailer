@@ -8,6 +8,12 @@ export const generate = async (page: Page, url: string) => {
   const dashboard = await page.$(".Dashboard");
   const boundingBox = await dashboard?.boundingBox();
 
+  // await page.setViewport({
+  //   height: boundingBox!.height,
+  //   width: boundingBox!.width,
+  //   deviceScaleFactor: 2,
+  // });
+
   return page.pdf({
     height: boundingBox?.height,
     width: boundingBox?.width,
