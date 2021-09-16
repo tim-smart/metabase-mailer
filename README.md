@@ -12,3 +12,11 @@ Then:
 $ yarn install
 $ yarn build
 ```
+
+## Docker
+
+You can also run this using the pre-built docker image:
+
+https://hub.docker.com/r/timsmart/metabase-mailer
+
+See `.env-example` for the environment variables used for configuration.
