@@ -8,20 +8,22 @@ export const generate = async (page: Page, url: string) => {
 
   const dashboard = await page.$(".Dashboard");
   const boundingBox = await dashboard?.boundingBox();
+  const height = Math.ceil(boundingBox!.height);
+  const width = Math.ceil(boundingBox!.width);
 
   await page.setViewport({
-    height: boundingBox!.height,
-    width: boundingBox!.width,
+    height,
+    width,
     deviceScaleFactor: 2,
   });
 
   await page.evaluate(`const bodyStyle = document.getElementsByTagName('body')[0].style;
-bodyStyle.width = '${boundingBox!.width}px';
-bodyStyle.height = '${boundingBox!.height}px';`);
+bodyStyle.width = '${width}px';
+bodyStyle.height = '${height}px';`);
 
   return page.pdf({
-    height: boundingBox?.height,
-    width: boundingBox?.width,
+    height,
+    width,
     pageRanges: "1",
     printBackground: true,
   });
