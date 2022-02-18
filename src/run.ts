@@ -17,21 +17,22 @@ async function main() {
   await login(baseURL)(
     page,
     process.env.METABASE_EMAIL!,
-    process.env.METABASE_PASSWORD!,
+    process.env.METABASE_PASSWORD!
   );
 
   const reportURL = `${baseURL}${process.env.METABASE_PDF_PATH}`;
   const pdfBuffer = await Pdf.generate(page, reportURL);
 
-  Email.send({
-    from: process.env.METABASE_EMAIL_FROM!,
-    to: process.env.METABASE_EMAIL_TO!,
-    subject: process.env.METABASE_EMAIL_SUBJECT!,
-    link: reportURL,
-    pdf: pdfBuffer,
-  });
-
-  await browser.close();
+  await Promise.all([
+    Email.send({
+      from: process.env.METABASE_EMAIL_FROM!,
+      to: process.env.METABASE_EMAIL_TO!,
+      subject: process.env.METABASE_EMAIL_SUBJECT!,
+      link: reportURL,
+      pdf: pdfBuffer,
+    }),
+    browser.close(),
+  ]);
 }
 
 main();
