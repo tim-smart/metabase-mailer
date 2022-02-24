@@ -3,7 +3,7 @@ import { Page } from "puppeteer";
 export const generate = async (page: Page, url: string) => {
   await page.goto(url, {
     waitUntil: "networkidle0",
-    timeout: 60000,
+    timeout: 5 * 60 * 1000,
   });
 
   const dashboard = await page.$(".Dashboard");
