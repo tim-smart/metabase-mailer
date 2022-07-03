@@ -6,10 +6,17 @@ export const generate = async (page: Page, url: string) => {
     timeout: 5 * 60 * 1000,
   });
 
+  await page.evaluate(() => {
+    document.querySelector("header")?.remove();
+    document
+      .querySelector("div.spread > div")
+      ?.setAttribute("style", "height: auto;");
+  });
+
   const dashboard = await page.$(".Dashboard");
-  const boundingBox = await dashboard?.boundingBox();
-  const height = Math.ceil(boundingBox!.height);
-  const width = Math.ceil(boundingBox!.width);
+  let boundingBox = await dashboard?.boundingBox();
+  let height = Math.ceil(boundingBox!.height);
+  let width = Math.ceil(boundingBox!.width);
 
   await page.setViewport({
     height,
