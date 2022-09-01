@@ -7,13 +7,24 @@ export const generate = async (page: Page, url: string) => {
   });
 
   await page.evaluate(() => {
-    document.querySelector("header")?.remove();
-    document
-      .querySelector("div.spread > div")
-      ?.setAttribute("style", "height: auto;");
+    document.documentElement.setAttribute("style", "width: 100%;");
+    const content = document.querySelector(
+      "div[data-testid=dashboard-parameters-and-cards]"
+    );
+    if (content) {
+      document.body.appendChild(content);
+      document.getElementById("root")?.remove();
+
+      content.setAttribute("id", "dashboard");
+      content.setAttribute("class", "");
+      content.setAttribute(
+        "style",
+        "height: auto; box-sizing: content-box; padding-bottom: 75px;"
+      );
+    }
   });
 
-  const dashboard = await page.$(".Dashboard");
+  const dashboard = await page.$("#dashboard");
   let boundingBox = await dashboard?.boundingBox();
   let height = Math.ceil(boundingBox!.height);
   let width = Math.ceil(boundingBox!.width);
@@ -25,11 +36,11 @@ export const generate = async (page: Page, url: string) => {
   });
 
   await page.evaluate(`const bodyStyle = document.getElementsByTagName('body')[0].style;
-bodyStyle.width = '${width}px';
-bodyStyle.height = '${height}px';`);
+  bodyStyle.width = '${width}px';
+  bodyStyle.height = '${height}px';`);
 
   return page.pdf({
-    height,
+    height: height,
     width,
     pageRanges: "1",
     printBackground: true,
