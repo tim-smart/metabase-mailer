@@ -9,12 +9,14 @@ const transport = Nodemailer.createTransport({
 
 export const send = async ({
   to,
+  cc,
   from,
   subject,
   link,
   pdf,
 }: {
   to: string;
+  cc?: string;
   from: string;
   subject: string;
   link: string;
@@ -25,6 +27,7 @@ export const send = async ({
       {
         from,
         to,
+        cc,
         subject,
         attachments: [
           {
