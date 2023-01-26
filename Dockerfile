@@ -4,15 +4,15 @@ RUN mkdir -p /app
 WORKDIR /app
 
 COPY package.json .
-COPY yarn.lock .
+COPY pnpm-lock.yaml .
 
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 
-RUN yarn install --production=false
+RUN npm i -g pnpm && pnpm i
 
 COPY . ./
 
-RUN yarn build
+RUN pnpm build
 
 # Runtime image
 FROM node:alpine
@@ -31,10 +31,11 @@ RUN apk add --no-cache \
   ca-certificates \
   ttf-freefont
 
+COPY package.json .
+COPY pnpm-lock.yaml .
 
-COPY --from=build /app/package.json ./
-COPY --from=build /app/yarn.lock ./
+RUN npm i -g pnpm && pnpm i -P
+
 COPY --from=build /app/dist ./dist
-COPY --from=build /app/node_modules ./node_modules
 
-CMD [ "yarn", "start" ]
+CMD [ "node", "dist/main.js" ]

@@ -9,8 +9,8 @@
     "./*": "./dist/*.js"
   },
   "scripts": {
-    "build": "tsc -p .",
-    "start": "node dist/run.js"
+    "build": "tsc",
+    "start": "node dist/main.js"
   },
   "devDependencies": {
     "@tsplus-types/effect__io": "0.0.66-f715d9e",
