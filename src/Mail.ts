@@ -10,8 +10,6 @@ export class SendMailError {
 const make = (opts: SMTPTransport.Options) => {
   const transport = Nodemailer.createTransport(opts)
 
-  console.error(opts)
-
   const send = (msg: Mailer.Options) =>
     Effect.async<never, SendMailError, SMTPTransport.SentMessageInfo>(
       (resume) => {
