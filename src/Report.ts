@@ -17,7 +17,6 @@ const make = (config: ReportConfig) =>
     const link = metabase.url(config.reportPath)
 
     const generateAndNotify = Do(($) => {
-      $(metabase.login)
       const pdf = $(metabase.pdf(config.reportPath))
       $(notify(pdf))
     })

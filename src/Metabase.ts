@@ -12,17 +12,6 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
 
     const url = (path: string) => `${baseUrl}${path}`
 
-    const login = page.with(async (page) => {
-      await page.goto(url("/auth/login"))
-      await page.waitForSelector("#formField-username")
-
-      await page.type("input[name=username]", email)
-      await page.type("input[name=password]", password.value)
-      await page.keyboard.press("Enter")
-
-      await page.waitForNetworkIdle()
-    })
-
     const pdf = (path: string) =>
       page.with(async (page) => {
         await page.goto(url(path), {
@@ -71,7 +60,20 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
         })
       })
 
-    return { url, login, pdf }
+    $(
+      page.with(async (page) => {
+        await page.goto(url("/auth/login"))
+        await page.waitForSelector("#formField-username")
+
+        await page.type("input[name=username]", email)
+        await page.type("input[name=password]", password.value)
+        await page.keyboard.press("Enter")
+
+        await page.waitForNetworkIdle()
+      }),
+    )
+
+    return { url, pdf }
   })
 
 export interface Metabase extends Effect.Success<ReturnType<typeof make>> {}
