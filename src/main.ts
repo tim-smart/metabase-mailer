@@ -13,41 +13,35 @@ const PageLive = Puppeteer.makeLayer({
   },
 })
 
-const MailLive = Mail.makeLayer(
-  Config.struct({
-    host: Config.string("SMTP_HOST"),
-    port: Config.integer("SMTP_PORT"),
-    secure: Config.bool("SMTP_SECURE").withDefault(false),
-    ignoreTLS: Config.bool("SMTP_IGNORE_TLS").withDefault(false),
-    requireTLS: Config.bool("SMTP_REQUIRE_TLS").withDefault(false),
-    auth: Config.struct({
-      user: Config.string("SMTP_USER"),
-      pass: Config.string("SMTP_PASS"),
-    }).withDefault(undefined),
-  }),
-)
+const MailLive = Mail.makeLayer({
+  host: Config.string("SMTP_HOST"),
+  port: Config.integer("SMTP_PORT"),
+  secure: Config.bool("SMTP_SECURE").withDefault(false),
+  ignoreTLS: Config.bool("SMTP_IGNORE_TLS").withDefault(false),
+  requireTLS: Config.bool("SMTP_REQUIRE_TLS").withDefault(false),
+  auth: Config.struct({
+    user: Config.string("SMTP_USER"),
+    pass: Config.string("SMTP_PASS"),
+  }).withDefault(undefined),
+})
 
 const MetabaseLive =
   PageLive >>
-  Metabase.makeLayer(
-    Config.struct({
-      baseUrl: Config.string("METABASE_BASE_URL"),
-      email: Config.string("METABASE_EMAIL"),
-      password: Config.secret("METABASE_PASSWORD"),
-    }),
-  )
+  Metabase.makeLayer({
+    baseUrl: Config.string("METABASE_BASE_URL"),
+    email: Config.string("METABASE_EMAIL"),
+    password: Config.secret("METABASE_PASSWORD"),
+  })
 
 const ReportLive =
   (MailLive + MetabaseLive) >>
-  Report.makeLayer(
-    Config.struct({
-      reportPath: Config.string("METABASE_PDF_PATH"),
-      emailFrom: Config.string("METABASE_EMAIL_FROM"),
-      emailTo: Config.string("METABASE_EMAIL_TO"),
-      emailCc: Config.string("METABASE_EMAIL_CC").optional,
-      emailSubject: Config.string("METABASE_EMAIL_SUBJECT"),
-    }),
-  )
+  Report.makeLayer({
+    reportPath: Config.string("METABASE_PDF_PATH"),
+    emailFrom: Config.string("METABASE_EMAIL_FROM"),
+    emailTo: Config.string("METABASE_EMAIL_TO"),
+    emailCc: Config.string("METABASE_EMAIL_CC").optional,
+    emailSubject: Config.string("METABASE_EMAIL_SUBJECT"),
+  })
 
 const program = Report.Report.accessWithEffect((_) => _.generateAndNotify)
 

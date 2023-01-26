@@ -2,9 +2,6 @@ import * as P from "puppeteer"
 
 export const PuppeteerConfig = Tag<P.PuppeteerLaunchOptions>()
 
-export const makeConfig = (_: P.PuppeteerLaunchOptions) =>
-  Layer.succeed(PuppeteerConfig, _)
-
 export class LaunchError {
   readonly _tag = "LaunchError"
   constructor(readonly reason: unknown) {}
