@@ -38,4 +38,4 @@ RUN npm i -g pnpm && pnpm i -P
 
 COPY --from=build /app/dist ./dist
 
-CMD [ "node", "dist/main.js" ]
+CMD [ "node", "--enable-source-maps", "dist/main.js" ]

@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "outDir": "dist",
-    "inlineSourceMap": true,
     "lib": ["ESNext", "dom"],
     "target": "ESNext",
     "moduleResolution": "nodenext",
@@ -11,10 +10,15 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "tsPlusConfig": "./tsplus-config.json",
+    "sourceMap": true,
     "paths": {
       "metabase-mailer/*": ["./src/*.js"]
     }
   },
 
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+
+  "ts-node": {
+    "files": true
+  }
 }

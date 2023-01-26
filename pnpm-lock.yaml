@@ -1,10 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@effect/io': ~0.0.66
-  '@fp-ts/data': ~0.0.40
-  '@tsplus-types/effect__io': 0.0.66-f715d9e
-  '@tsplus-types/fp-ts__data': 0.0.41-cbaad16
+  '@effect/io': ~0.1.0
+  '@fp-ts/core': ^0.1.1
+  '@fp-ts/data': ~0.1.0
+  '@tsplus-types/effect__io': 0.1.0-a794f36
+  '@tsplus-types/fp-ts__core': 0.1.1-a794f36
+  '@tsplus-types/fp-ts__data': 0.1.0-a794f36
   '@types/node': ^18.11.18
   '@types/nodemailer': ^6.4.1
   dotenv: ^16.0.0
@@ -15,15 +17,17 @@ specifiers:
   typescript: https://cdn.jsdelivr.net/npm/@tsplus/installer@0.0.164/compiler/typescript.tgz
 
 dependencies:
-  '@effect/io': 0.0.66
-  '@fp-ts/data': 0.0.41
+  '@effect/io': 0.1.0
+  '@fp-ts/core': 0.1.1
+  '@fp-ts/data': 0.1.0
   dotenv: 16.0.3
   nodemailer: 6.9.0
   puppeteer: 19.6.0
 
 devDependencies:
-  '@tsplus-types/effect__io': 0.0.66-f715d9e_@effect+io@0.0.66
-  '@tsplus-types/fp-ts__data': 0.0.41-cbaad16_@fp-ts+data@0.0.41
+  '@tsplus-types/effect__io': 0.1.0-a794f36_@effect+io@0.1.0
+  '@tsplus-types/fp-ts__core': 0.1.1-a794f36_@fp-ts+core@0.1.1
+  '@tsplus-types/fp-ts__data': 0.1.0-a794f36_@fp-ts+data@0.1.0
   '@types/node': 18.11.18
   '@types/nodemailer': 6.4.7
   prettier: 2.8.3
@@ -60,19 +64,19 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@effect/io/0.0.66:
-    resolution: {integrity: sha512-aRrVm4+hqT4VFVpBXEh8Ecrzgz0lHOOp4ArwvmF2sqMUhoVlKmMPCfHB6ccDYtQbsjKU9QkQrTA8OCdrMEndpQ==}
+  /@effect/io/0.1.0:
+    resolution: {integrity: sha512-mQSoXqgAC33F5pmJFtQFoSGXlNe6C2h5sz8EtLBHQtQP8SkaJXtD4QU9J8DYYRdRIByuNZbFmG2FBh4wXWYMZA==}
     dependencies:
-      '@fp-ts/core': 0.0.11
-      '@fp-ts/data': 0.0.41
+      '@fp-ts/core': 0.1.1
+      '@fp-ts/data': 0.1.0
 
-  /@fp-ts/core/0.0.11:
-    resolution: {integrity: sha512-BCAJBYzghwoJpcUOARJ1tui50HoYJFlV2pJlVMlsEkDFhD8MTtq8xQVpZCRF66RmtkxtGBYINCQ+5H1lRaL35Q==}
+  /@fp-ts/core/0.1.1:
+    resolution: {integrity: sha512-7vQnrnvJAMrXgIwt0qQNhXkPDtm4l8vwql8EvXeY47v/FwnWpDvt1HISoO9Kq3am5SZ0A8Av+4NqPab2FRdKxw==}
 
-  /@fp-ts/data/0.0.41:
-    resolution: {integrity: sha512-0S93kOQ91D7wp60q/PSVWvMsJjSWJutjt4qX/BvVNV7+fymuC2hTfW2HlE2OcMK11xCNiI6Rq2AkvyzoMhOlpg==}
+  /@fp-ts/data/0.1.0:
+    resolution: {integrity: sha512-T4PbFVo2fzy2XaUHbFmEc24TJSPzTl/xUHC+1qCXZZfb3MaIKdKHS10aUt+9zcQ75KpiZbHL8hBfoP9fHOI6Mg==}
     dependencies:
-      '@fp-ts/core': 0.0.11
+      '@fp-ts/core': 0.1.1
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
@@ -106,20 +110,28 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@tsplus-types/effect__io/0.0.66-f715d9e_@effect+io@0.0.66:
-    resolution: {integrity: sha512-+KjTUlbG3fEu1wZ4ceR1rmg5rpgf3cuuxfaOSo0It2a94hu05kKa6GhlEDcymA9+Tk3F14BYxJPUADyHxr6j5w==}
+  /@tsplus-types/effect__io/0.1.0-a794f36_@effect+io@0.1.0:
+    resolution: {integrity: sha512-fvdL+wMZqdRmBi785w7+MvlHJRZZjH7QugjOG+Z+dNArVxeDlWh8QJw6zGCdSkqHIyk1TtccpesgCNRk6v5Wew==}
     peerDependencies:
-      '@effect/io': 0.0.66
+      '@effect/io': 0.1.0
     dependencies:
-      '@effect/io': 0.0.66
+      '@effect/io': 0.1.0
     dev: true
 
-  /@tsplus-types/fp-ts__data/0.0.41-cbaad16_@fp-ts+data@0.0.41:
-    resolution: {integrity: sha512-Mw1QetOdarQpBcg63oYcBG0WGrDFCs+pdWCygn78oKOsVn9ewhe3wZL8/qrjMvNgOUmMZS+0FiyovP4zhZFdGw==}
+  /@tsplus-types/fp-ts__core/0.1.1-a794f36_@fp-ts+core@0.1.1:
+    resolution: {integrity: sha512-sng1Fk5MBXi4L/joS2Z38QxWp/LawWl/f+XH0JeeCgkc987xtSA5fewwerdx5Z/QuwBZiF5Yoa50JWSPp5U8hA==}
     peerDependencies:
-      '@fp-ts/data': 0.0.41
+      '@fp-ts/core': 0.1.1
     dependencies:
-      '@fp-ts/data': 0.0.41
+      '@fp-ts/core': 0.1.1
+    dev: true
+
+  /@tsplus-types/fp-ts__data/0.1.0-a794f36_@fp-ts+data@0.1.0:
+    resolution: {integrity: sha512-dqjoJqBVRQWhyoFtKiej3YVcxO1Hj4vyi3JElnn8S+piwv7yHu8VZ+FTGz2RjeccSvQVNx9Y2NN/fOgOThKpCA==}
+    peerDependencies:
+      '@fp-ts/data': 0.1.0
+    dependencies:
+      '@fp-ts/data': 0.1.0
     dev: true
 
   /@types/node/18.11.18:
