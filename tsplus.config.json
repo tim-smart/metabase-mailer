@@ -1,0 +1,8 @@
+{
+  "importMap": {
+    "^(.*)/src/(.*)\\.(ts|js)$": "metabase-mailer/$2"
+  },
+  "traceMap": {
+    "^(.*)/src/(.*)\\.(ts|js)$": "(metabase-mailer) $2"
+  }
+}

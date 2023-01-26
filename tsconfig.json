@@ -3,11 +3,17 @@
     "outDir": "dist",
     "inlineSourceMap": true,
     "lib": ["ESNext", "dom"],
-    "target": "es2018",
-    "moduleResolution": "node",
-    "module": "CommonJS",
+    "target": "ESNext",
+    "moduleResolution": "nodenext",
+    "module": "ESNext",
     "strict": true,
-    "esModuleInterop": true
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "tsPlusConfig": "./tsplus-config.json",
+    "paths": {
+      "metabase-mailer/*": ["./src/*.js"]
+    }
   },
 
   "include": ["src/**/*"]
