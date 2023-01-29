@@ -25,23 +25,23 @@ const MailLive = Mail.makeLayer({
   }).withDefault(undefined),
 })
 
-const MetabaseLive = PageLive.provide(
+const MetabaseLive =
+  PageLive >>
   Metabase.makeLayer({
     baseUrl: Config.string("METABASE_BASE_URL"),
     email: Config.string("METABASE_EMAIL"),
     password: Config.secret("METABASE_PASSWORD"),
-  }),
-)
+  })
 
-const ReportLive = MailLive.merge(MetabaseLive).provide(
+const ReportLive =
+  (MailLive + MetabaseLive) >>
   Report.makeLayer({
     reportPath: Config.string("METABASE_PDF_PATH"),
     emailFrom: Config.string("METABASE_EMAIL_FROM"),
     emailTo: Config.string("METABASE_EMAIL_TO"),
     emailCc: Config.string("METABASE_EMAIL_CC").optional,
     emailSubject: Config.string("METABASE_EMAIL_SUBJECT"),
-  }),
-)
+  })
 
 const program = Report.Report.accessWithEffect(
   (_) => _.generateAndNotify,
