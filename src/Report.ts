@@ -16,8 +16,10 @@ const make = (config: ReportConfig) =>
 
     const link = metabase.url(config.reportPath)
 
+    const generate = metabase.pdf(config.reportPath)
+
     const generateAndNotify = Do(($) => {
-      const pdf = $(metabase.pdf(config.reportPath))
+      const pdf = $(generate)
       $(notify(pdf))
     })
 
@@ -38,7 +40,7 @@ const make = (config: ReportConfig) =>
 You can view the web version here: ${link}`,
       })
 
-    return { generateAndNotify }
+    return { generate, generateAndNotify }
   })
 
 export interface Report extends Effect.Success<ReturnType<typeof make>> {}

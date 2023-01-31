@@ -33,7 +33,7 @@ const MetabaseLive =
     password: Config.secret("METABASE_PASSWORD"),
   })
 
-const ReportLive =
+export const ReportLive =
   (MailLive + MetabaseLive) >>
   Report.makeLayer({
     reportPath: Config.string("METABASE_PDF_PATH"),
