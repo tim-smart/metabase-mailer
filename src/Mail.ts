@@ -1,7 +1,6 @@
 import Nodemailer from "nodemailer"
 import SMTPTransport from "nodemailer/lib/smtp-transport/index.js"
 import Mailer from "nodemailer/lib/mailer/index.js"
-import { WrapWithConfig, unwrapConfig } from "./util/config.js"
 
 export class SendMailError {
   readonly _tag = "SendMailError"
@@ -30,5 +29,5 @@ const make = (opts: SMTPTransport.Options) => {
 export interface Mail extends ReturnType<typeof make> {}
 export const Mail = Tag<Mail>()
 
-export const makeLayer = (_: WrapWithConfig<SMTPTransport.Options>) =>
-  unwrapConfig(_).config.map(make).toLayer(Mail)
+export const makeLayer = (_: Config.Wrap<SMTPTransport.Options>) =>
+  Config.unwrap(_).config.map(make).toLayer(Mail)

@@ -1,5 +1,3 @@
-import { WrapWithConfig, unwrapConfig } from "./util/config.js"
-
 export interface MetabaseConfig {
   readonly baseUrl: string
   readonly email: string
@@ -78,5 +76,5 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
 
 export interface Metabase extends Effect.Success<ReturnType<typeof make>> {}
 export const Metabase = Tag<Metabase>()
-export const makeLayer = (_: WrapWithConfig<MetabaseConfig>) =>
-  unwrapConfig(_).config.flatMap(make).toLayer(Metabase)
+export const makeLayer = (_: Config.Wrap<MetabaseConfig>) =>
+  Config.unwrap(_).config.flatMap(make).toLayer(Metabase)

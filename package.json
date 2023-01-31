@@ -13,9 +13,9 @@
     "start": "node dist/main.js"
   },
   "devDependencies": {
-    "@tsplus-types/effect__io": "0.1.4-4e9791d",
-    "@tsplus-types/fp-ts__core": "0.1.1-a794f36",
-    "@tsplus-types/fp-ts__data": "0.1.1-4e9791d",
+    "@tsplus-types/effect__io": "0.1.4-cf15084",
+    "@tsplus-types/fp-ts__core": "0.1.1-cf15084",
+    "@tsplus-types/fp-ts__data": "0.1.1-cf15084",
     "@types/node": "^18.11.18",
     "@types/nodemailer": "^6.4.1",
     "prettier": "^2.8.3",
@@ -23,7 +23,7 @@
     "typescript": "https://cdn.jsdelivr.net/npm/@tsplus/installer@0.0.168/compiler/typescript.tgz"
   },
   "dependencies": {
-    "@effect/io": "~0.1.4",
+    "@effect/io": "~0.1.5",
     "@fp-ts/core": "^0.1.1",
     "@fp-ts/data": "~0.1.1",
     "dotenv": "^16.0.0",

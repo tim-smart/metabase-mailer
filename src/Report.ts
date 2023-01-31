@@ -1,5 +1,3 @@
-import { WrapWithConfig, unwrapConfig } from "./util/config.js"
-
 export interface ReportConfig {
   readonly reportPath: string
 
@@ -45,5 +43,5 @@ You can view the web version here: ${link}`,
 
 export interface Report extends Effect.Success<ReturnType<typeof make>> {}
 export const Report = Tag<Report>()
-export const makeLayer = (_: WrapWithConfig<ReportConfig>) =>
-  unwrapConfig(_).config.flatMap(make).toLayer(Report)
+export const makeLayer = (_: Config.Wrap<ReportConfig>) =>
+  Config.unwrap(_).config.flatMap(make).toLayer(Report)
