@@ -8,7 +8,7 @@ export interface ReportConfig {
 }
 
 const make = (config: ReportConfig) =>
-  Do(($) => {
+  Do($ => {
     const mail = $(Mail.Mail.access)
     const metabase = $(Metabase.Metabase.access)
 
@@ -16,7 +16,7 @@ const make = (config: ReportConfig) =>
 
     const generate = metabase.pdf(config.reportPath)
 
-    const generateAndNotify = Do(($) => {
+    const generateAndNotify = Do($ => {
       const pdf = $(generate)
       $(notify(pdf))
     })

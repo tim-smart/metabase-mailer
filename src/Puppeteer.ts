@@ -7,9 +7,9 @@ export class LaunchError {
   constructor(readonly reason: unknown) {}
 }
 
-const makeBrowser = Effect.serviceWithEffect(PuppeteerConfig, (opts) =>
-  Effect.tryCatchPromise(P.launch(opts), (reason) => new LaunchError(reason)),
-).acquireRelease((browser) => Effect.promise(browser.close()))
+const makeBrowser = Effect.serviceWithEffect(PuppeteerConfig, opts =>
+  Effect.tryCatchPromise(P.launch(opts), reason => new LaunchError(reason)),
+).acquireRelease(browser => Effect.promise(browser.close()))
 
 export class NewPageError {
   readonly _tag = "NewPageError"
@@ -17,21 +17,21 @@ export class NewPageError {
 }
 
 const newPage = makeBrowser
-  .flatMap((browser) =>
+  .flatMap(browser =>
     Effect.tryCatchPromise(
       () => browser.newPage(),
-      (reason) => new NewPageError(reason),
+      reason => new NewPageError(reason),
     ),
   )
-  .acquireRelease((page) => Effect.promise(() => page.close()))
+  .acquireRelease(page => Effect.promise(() => page.close()))
 
-export const makePage = Do(($) => {
+export const makePage = Do($ => {
   const page = $(newPage)
 
   const withPage = <A>(f: (p: P.Page) => Promise<A>, __tsplusTrace?: string) =>
     Effect.tryCatchPromise(
       () => f(page),
-      (reason) => new WithPageError(reason, __tsplusTrace),
+      reason => new WithPageError(reason, __tsplusTrace),
     )
 
   return {
@@ -52,4 +52,4 @@ export class WithPageError {
 }
 
 export const withPage = <A>(f: (p: P.Page) => Promise<A>) =>
-  Effect.serviceWithEffect(Page, (page) => page.with(f))
+  Effect.serviceWithEffect(Page, page => page.with(f))

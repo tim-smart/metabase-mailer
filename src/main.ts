@@ -44,10 +44,10 @@ export const ReportLive =
   })
 
 const program = Report.Report.accessWithEffect(
-  (_) => _.generateAndNotify,
-).catchAllCause((_) => _.logErrorCause)
+  _ => _.generateAndNotify,
+).tapErrorCause(_ => _.logErrorCause)
 
-program.provideLayer(ReportLive).runCallback((exit) => {
+program.provideLayer(ReportLive).runCallback(exit => {
   if (exit.isFailure()) {
     console.error(exit.cause.squash)
   }

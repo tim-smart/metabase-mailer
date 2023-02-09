@@ -5,13 +5,13 @@ export interface MetabaseConfig {
 }
 
 const make = ({ baseUrl, email, password }: MetabaseConfig) =>
-  Do(($) => {
+  Do($ => {
     const page = $(Puppeteer.Page.access)
 
     const url = (path: string) => `${baseUrl}${path}`
 
     const pdf = (path: string) =>
-      page.with(async (page) => {
+      page.with(async page => {
         await page.goto(url(path), {
           waitUntil: "networkidle0",
           timeout: 5 * 60 * 1000,
@@ -59,7 +59,7 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
       })
 
     $(
-      page.with(async (page) => {
+      page.with(async page => {
         await page.goto(url("/auth/login"))
         await page.waitForSelector("#formField-username")
 

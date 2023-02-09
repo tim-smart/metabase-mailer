@@ -12,7 +12,7 @@ const make = (opts: SMTPTransport.Options) => {
 
   const send = (msg: Mailer.Options) =>
     Effect.async<never, SendMailError, SMTPTransport.SentMessageInfo>(
-      (resume) => {
+      resume => {
         transport.sendMail(msg, (err, info) => {
           if (err) {
             resume(Effect.fail(new SendMailError(err)))

@@ -1,37 +1,37 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@effect/io': ~0.1.5
-  '@fp-ts/core': ^0.1.1
-  '@fp-ts/data': ~0.1.1
-  '@tsplus-types/effect__io': 0.1.4-cf15084
-  '@tsplus-types/fp-ts__core': 0.1.1-cf15084
-  '@tsplus-types/fp-ts__data': 0.1.1-cf15084
-  '@types/node': ^18.11.18
+  '@effect/data': ^0.1.0
+  '@effect/io': ~0.1.11
+  '@fp-ts/core': ^0.2.0
+  '@tsplus-types/effect__data': 0.1.0-cf9876a
+  '@tsplus-types/effect__io': 0.1.11-cf9876a
+  '@tsplus-types/fp-ts__core': 0.2.0-cf9876a
+  '@types/node': ^18.13.0
   '@types/nodemailer': ^6.4.1
   dotenv: ^16.0.0
   nodemailer: ^6.9.1
-  prettier: ^2.8.3
-  puppeteer: 19.6.0
+  prettier: ^2.8.4
+  puppeteer: 19.6.3
   ts-node: ^10.8.2
   typescript: https://cdn.jsdelivr.net/npm/@tsplus/installer@0.0.168/compiler/typescript.tgz
 
 dependencies:
-  '@effect/io': 0.1.5
-  '@fp-ts/core': 0.1.1
-  '@fp-ts/data': 0.1.1
+  '@effect/data': 0.1.0
+  '@effect/io': 0.1.11
+  '@fp-ts/core': 0.2.0
   dotenv: 16.0.3
   nodemailer: 6.9.1
-  puppeteer: 19.6.0
+  puppeteer: 19.6.3
 
 devDependencies:
-  '@tsplus-types/effect__io': 0.1.4-cf15084_@effect+io@0.1.5
-  '@tsplus-types/fp-ts__core': 0.1.1-cf15084_@fp-ts+core@0.1.1
-  '@tsplus-types/fp-ts__data': 0.1.1-cf15084_@fp-ts+data@0.1.1
-  '@types/node': 18.11.18
+  '@tsplus-types/effect__data': 0.1.0-cf9876a_@effect+data@0.1.0
+  '@tsplus-types/effect__io': 0.1.11-cf9876a_@effect+io@0.1.11
+  '@tsplus-types/fp-ts__core': 0.2.0-cf9876a_@fp-ts+core@0.2.0
+  '@types/node': 18.13.0
   '@types/nodemailer': 6.4.7
-  prettier: 2.8.3
-  ts-node: 10.9.1_3okva65blkefhusc6h6ybg7aom
+  prettier: 2.8.4
+  ts-node: 10.9.1_wuxqksmrk5hz3slrnpeieopgoi
   typescript: '@cdn.jsdelivr.net/npm/@tsplus/installer@0.0.168/compiler/typescript.tgz'
 
 packages:
@@ -64,19 +64,19 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@effect/io/0.1.5:
-    resolution: {integrity: sha512-tqKOKswlTZv45Qju/zIc2Tr65nkA4uS81GKZ0A133x2Q6VZeLReGgtOVUzaICAcD57fDbNmPdeGBZYnpKo9OfQ==}
+  /@effect/data/0.1.0:
+    resolution: {integrity: sha512-p9/AYs06o7IVyKRUvzq73+XnzmYQIkflo+F/IDMJRzulOEdfSyl3+Tvkw0pXVeXqlcKxlTSdos1VYs2wbRFQDg==}
     dependencies:
-      '@fp-ts/core': 0.1.1
-      '@fp-ts/data': 0.1.1
+      '@fp-ts/core': 0.2.0
 
-  /@fp-ts/core/0.1.1:
-    resolution: {integrity: sha512-7vQnrnvJAMrXgIwt0qQNhXkPDtm4l8vwql8EvXeY47v/FwnWpDvt1HISoO9Kq3am5SZ0A8Av+4NqPab2FRdKxw==}
-
-  /@fp-ts/data/0.1.1:
-    resolution: {integrity: sha512-hgsoSDKP01kGY+g/Ino+QX3VEqiPnf0mrhKujMajT4ma0w82i4u0nMEPbBykyMxscQirFemwl7CnWn7G3TadcA==}
+  /@effect/io/0.1.11:
+    resolution: {integrity: sha512-dQLGx6KhuEgGAbb5UDbBi0P+wtSsm33ojlcshf2Ho4soORDd2QRDOMC+ki1EzVENztBhRmUd9Yp8DyICBQtldw==}
     dependencies:
-      '@fp-ts/core': 0.1.1
+      '@effect/data': 0.1.0
+      '@fp-ts/core': 0.2.0
+
+  /@fp-ts/core/0.2.0:
+    resolution: {integrity: sha512-oDMfMDId/Op6EHLTBZvhsW6d0XmXZDWQsvcZmC2wXGt+utv8hXGi41IJD8SwBJsvQvoJYe/NRTamDco4Bl7qsQ==}
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
@@ -110,44 +110,44 @@ packages:
     resolution: {integrity: sha512-yOlFc+7UtL/89t2ZhjPvvB/DeAr3r+Dq58IgzsFkOAvVC6NMJXmCGjbptdXdR9qsX7pKcTL+s87FtYREi2dEEQ==}
     dev: true
 
-  /@tsplus-types/effect__io/0.1.4-cf15084_@effect+io@0.1.5:
-    resolution: {integrity: sha512-Fug9dVrRD8nk+4cTk/GI+zrBlwJPT5djoSzj7+gc2VCMRyJoKFYMKNFBK2yOS94CRx7vP4q5C6dfMavTdLs0Tw==}
+  /@tsplus-types/effect__data/0.1.0-cf9876a_@effect+data@0.1.0:
+    resolution: {integrity: sha512-PFJ0Lh0ilCdYjapyab2S+8j7GnIk11IQ5EWHKR5Y+yLzHj5OOV9FWKRUeXv+qm2HC9Zg7YtWPIhU9saJlCPnNw==}
     peerDependencies:
-      '@effect/io': 0.1.4
+      '@effect/data': 0.1.0
     dependencies:
-      '@effect/io': 0.1.5
+      '@effect/data': 0.1.0
     dev: true
 
-  /@tsplus-types/fp-ts__core/0.1.1-cf15084_@fp-ts+core@0.1.1:
-    resolution: {integrity: sha512-C8XDOj3LMN7Gm2WZGAH6yja7JNBcEf1Ru2Fvqw8lq+sURAqt0QSthoaKyO+gEYSCbYhZvmIYsD6msLmWMpsHZg==}
+  /@tsplus-types/effect__io/0.1.11-cf9876a_@effect+io@0.1.11:
+    resolution: {integrity: sha512-ucYpZU4Q48mMoB6RtZEaZrmw42l6FqOyLOCXwir5XAZ20OXz0U6hLH/f200sDeqz2Di42ol9IwOS/2Y+mdKZbw==}
     peerDependencies:
-      '@fp-ts/core': 0.1.1
+      '@effect/io': 0.1.11
     dependencies:
-      '@fp-ts/core': 0.1.1
+      '@effect/io': 0.1.11
     dev: true
 
-  /@tsplus-types/fp-ts__data/0.1.1-cf15084_@fp-ts+data@0.1.1:
-    resolution: {integrity: sha512-P7P4PnagJdlOfzOJ4TK9h0t+7k+3v2f84Ai41yt3k2SOODJg+Ws18aJ5wKgXtxtl+wpd+vZwLoVf1ZeSKcjAQg==}
+  /@tsplus-types/fp-ts__core/0.2.0-cf9876a_@fp-ts+core@0.2.0:
+    resolution: {integrity: sha512-2/el0vVVPfKX6ddI68tfnMdGQq53OxMeJMS3XInH/MVBVGn8MocN/tCkC1VxCqshxhhGuTQh5r2jqtbOFOQwtA==}
     peerDependencies:
-      '@fp-ts/data': 0.1.1
+      '@fp-ts/core': 0.2.0
     dependencies:
-      '@fp-ts/data': 0.1.1
+      '@fp-ts/core': 0.2.0
     dev: true
 
-  /@types/node/18.11.18:
-    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
+  /@types/node/18.13.0:
+    resolution: {integrity: sha512-gC3TazRzGoOnoKAhUx+Q0t8S9Tzs74z7m0ipwGpSqQrleP14hKxP4/JUeEQcD3W1/aIpnWl8pHowI7WokuZpXg==}
 
   /@types/nodemailer/6.4.7:
     resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
     dependencies:
-      '@types/node': 18.11.18
+      '@types/node': 18.13.0
     dev: true
 
   /@types/yauzl/2.10.0:
     resolution: {integrity: sha512-Cn6WYCm0tXv8p6k+A8PvbDG763EDpBoTzHdA+Q/MF6H3sapGjCm9NzoaJncJS9tUKSuCoDs9XHxYYsQDgxR6kw==}
     requiresBuild: true
     dependencies:
-      '@types/node': 18.11.18
+      '@types/node': 18.13.0
     dev: false
     optional: true
 
@@ -496,8 +496,8 @@ packages:
     resolution: {integrity: sha512-F3asv42UuXchdzt+xXqfW1OGlVBe+mxa2mqI0pg5yAHZPvFmY3Y6drSf/GQ1A86WgWEN9Kzh/WrgKa6iGcHXLg==}
     dev: false
 
-  /prettier/2.8.3:
-    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
@@ -518,8 +518,8 @@ packages:
       once: 1.4.0
     dev: false
 
-  /puppeteer-core/19.6.0:
-    resolution: {integrity: sha512-GvqWdHr9eY/MFR5pXf9o0apnrTmG0hhS7/TtCPfeAvCbaUS1bsLMZWxNGvI/QbviRu4xxi6HrR7VW4x/4esq1Q==}
+  /puppeteer-core/19.6.3:
+    resolution: {integrity: sha512-8MbhioSlkDaHkmolpQf9Z7ui7jplFfOFTnN8d5kPsCazRRTNIH6/bVxPskn0v5Gh9oqOBlknw0eHH0/OBQAxpQ==}
     engines: {node: '>=14.1.0'}
     dependencies:
       cross-fetch: 3.1.5
@@ -539,8 +539,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /puppeteer/19.6.0:
-    resolution: {integrity: sha512-KpRjn/bosTWe8xOQ/F5J1UmQ4inR77ADddn8G6MqMPp/y9Tl+7EycXgrjO0/3i/OQfHi5bsvkTKXRkm0ieo/ew==}
+  /puppeteer/19.6.3:
+    resolution: {integrity: sha512-K03xTtGDwS6cBXX/EoqoZxglCUKcX2SLIl92fMnGMRjYpPGXoAV2yKEh3QXmXzKqfZXd8TxjjFww+tEttWv8kw==}
     engines: {node: '>=14.1.0'}
     requiresBuild: true
     dependencies:
@@ -548,7 +548,7 @@ packages:
       https-proxy-agent: 5.0.1
       progress: 2.0.3
       proxy-from-env: 1.1.0
-      puppeteer-core: 19.6.0
+      puppeteer-core: 19.6.3
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -622,7 +622,7 @@ packages:
     resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
     dev: false
 
-  /ts-node/10.9.1_3okva65blkefhusc6h6ybg7aom:
+  /ts-node/10.9.1_wuxqksmrk5hz3slrnpeieopgoi:
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -641,7 +641,7 @@ packages:
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.3
-      '@types/node': 18.11.18
+      '@types/node': 18.13.0
       acorn: 8.8.2
       acorn-walk: 8.2.0
       arg: 4.1.3

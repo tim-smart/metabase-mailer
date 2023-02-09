@@ -1,10 +1,10 @@
 import { ReportLive } from "metabase-mailer/main"
 
-Report.Report.accessWithEffect((_) => _.generate)
+Report.Report.accessWithEffect(_ => _.generate)
   .provideLayer(ReportLive)
-  .tap((pdf) =>
+  .tap(pdf =>
     Effect(() => {
       process.stdout.write(pdf)
     }),
   )
-  .catchAllCause((_) => _.logErrorCause).runPromise
+  .tapErrorCause(_ => _.logErrorCause).runPromise
