@@ -61,7 +61,7 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
     $(
       page.with(async page => {
         await page.goto(url("/auth/login"))
-        await page.waitForSelector("#formField-username")
+        await page.waitForSelector("input[name=username]", { visible: true })
 
         await page.type("input[name=username]", email)
         await page.type("input[name=password]", password.value)

@@ -19,7 +19,7 @@ const MailLive = Mail.makeLayer({
   secure: Config.bool("SMTP_SECURE").withDefault(false),
   ignoreTLS: Config.bool("SMTP_IGNORE_TLS").withDefault(false),
   requireTLS: Config.bool("SMTP_REQUIRE_TLS").withDefault(false),
-  auth: Config.struct({
+  auth: Config.all({
     user: Config.string("SMTP_USER"),
     pass: Config.string("SMTP_PASS"),
   }).withDefault(undefined),

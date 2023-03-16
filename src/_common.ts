@@ -1,4 +1,4 @@
-export type { Option as Maybe } from "@fp-ts/core/Option"
+export type { Option as Maybe } from "@effect/data/Option"
 
 export * as Mail from "./Mail.js"
 export * as Metabase from "./Metabase.js"

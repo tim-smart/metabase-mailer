@@ -41,7 +41,7 @@ import type { Duration } from "@effect/data/Duration"
 /**
  * @tsplus global
  */
-import { pipe, flow, identity } from "@fp-ts/core/Function"
+import { pipe, flow, identity } from "@effect/data/Function"
 
 /**
  * @tsplus global
