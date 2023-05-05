@@ -13,19 +13,19 @@
     "start": "node dist/main.js"
   },
   "devDependencies": {
-    "@tsplus-types/effect__data": "0.4.1-3e044b4",
-    "@tsplus-types/effect__io": "0.8.0-3e044b4",
-    "@types/node": "^18.15.3",
+    "@tsplus-types/effect__data": "0.12.2-11739c0",
+    "@tsplus-types/effect__io": "0.25.8-11739c0",
+    "@types/node": "^18.16.3",
     "@types/nodemailer": "^6.4.1",
-    "prettier": "^2.8.4",
+    "prettier": "^2.8.8",
     "ts-node": "^10.8.2",
-    "typescript": "https://cdn.jsdelivr.net/npm/@tsplus/installer@0.0.171/compiler/typescript.tgz"
+    "typescript": "https://cdn.jsdelivr.net/npm/@tsplus/installer@0.0.176/compiler/typescript.tgz"
   },
   "dependencies": {
-    "@effect/data": "^0.4.1",
-    "@effect/io": "~0.8.0",
+    "@effect/data": "^0.12.2",
+    "@effect/io": "~0.25.8",
     "dotenv": "^16.0.0",
     "nodemailer": "^6.9.1",
-    "puppeteer": "19.7.5"
+    "puppeteer": "20.1.0"
   }
 }

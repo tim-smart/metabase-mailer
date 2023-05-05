@@ -7,7 +7,7 @@ export class LaunchError {
   constructor(readonly reason: unknown) {}
 }
 
-const makeBrowser = Effect.serviceWithEffect(PuppeteerConfig, opts =>
+const makeBrowser = PuppeteerConfig.flatMap(opts =>
   Effect.tryCatchPromise(P.launch(opts), reason => new LaunchError(reason)),
 ).acquireRelease(browser => Effect.promise(browser.close()))
 
@@ -52,4 +52,4 @@ export class WithPageError {
 }
 
 export const withPage = <A>(f: (p: P.Page) => Promise<A>) =>
-  Effect.serviceWithEffect(Page, page => page.with(f))
+  Page.flatMap(page => page.with(f))

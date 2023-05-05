@@ -6,7 +6,7 @@ export interface MetabaseConfig {
 
 const make = ({ baseUrl, email, password }: MetabaseConfig) =>
   Do($ => {
-    const page = $(Puppeteer.Page.access)
+    const page = $(Puppeteer.Page)
 
     const url = (path: string) => `${baseUrl}${path}`
 
@@ -17,25 +17,9 @@ const make = ({ baseUrl, email, password }: MetabaseConfig) =>
           timeout: 5 * 60 * 1000,
         })
 
-        await page.evaluate(() => {
-          document.documentElement.setAttribute("style", "width: 100%;")
-          const content = document.querySelector(
-            "div[data-testid=dashboard-parameters-and-cards]",
-          )
-          if (content) {
-            document.body.appendChild(content)
-            document.getElementById("root")?.remove()
-
-            content.setAttribute("id", "dashboard")
-            content.setAttribute("class", "")
-            content.setAttribute(
-              "style",
-              "height: auto; box-sizing: content-box; padding-bottom: 75px;",
-            )
-          }
-        })
-
-        const dashboard = await page.$("#dashboard")
+        const dashboard = await page.$(
+          "div[data-testid=dashboard-parameters-and-cards]",
+        )
         let boundingBox = await dashboard?.boundingBox()
         let height = Math.ceil(boundingBox!.height)
         let width = Math.ceil(boundingBox!.width)

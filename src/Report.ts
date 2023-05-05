@@ -9,8 +9,8 @@ export interface ReportConfig {
 
 const make = (config: ReportConfig) =>
   Do($ => {
-    const mail = $(Mail.Mail.access)
-    const metabase = $(Metabase.Metabase.access)
+    const mail = $(Mail.Mail)
+    const metabase = $(Metabase.Metabase)
 
     const link = metabase.url(config.reportPath)
 

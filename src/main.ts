@@ -1,4 +1,5 @@
 import Dotenv from "dotenv"
+import * as Report from "metabase-mailer/Report"
 
 Dotenv.config()
 
@@ -6,6 +7,7 @@ const isProd = process.env.NODE_ENV === "production"
 
 const PageLive = Puppeteer.makeLayer({
   args: isProd ? ["--disable-dev-shm-usage", "--no-sandbox"] : [],
+  headless: "new",
   defaultViewport: {
     width: 1500,
     height: 1000,
